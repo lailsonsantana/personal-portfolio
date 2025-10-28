@@ -106,7 +106,7 @@ const Information: React.FC<InformationProps> = () => {
                     <ul className="space-y-3 text-lg">
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        TypeScript
+                        AWS na Prática
                         </li>
                         <li className="flex items-center gap-2">
                         <Check className="text-gray-400" />
