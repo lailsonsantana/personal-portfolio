@@ -9,11 +9,14 @@ interface HomeProps{
 const Home: React.FC<HomeProps> = () => {
     return(
         <div  className="flex flex-col bg-[#010F22] w-screen h-screen border-white border-t-2">
-            <section id="home" className="grid grid-cols-1 lg:flex items-center justify-center m-auto place-items-center">
+            <section id="home" className="grid grid-cols-1 lg:flex items-center justify-center m-auto place-items-center gap-8">
 
-                <div className="w-50 h-50 lg:w-70 lg:h-70 p-4">
-                    <img src="myphoto.png" className="rounded-full border-2 border-solid border-white"/>
+
+
+                <div className="relative w-70 h-70">
+                    <img src="myphoto.png" className="w-full h-full object-cover rounded-full" />
                 </div>
+
 
                 <div className="flex flex-col items-center p-2 text-white justify-center">
                     
@@ -22,21 +25,26 @@ const Home: React.FC<HomeProps> = () => {
                     
                     
                     
-                        <a className="flex gap-4 mt-4 p-4" href="/curriculo.pdf" download>
-                        <Button variant="outlined" size="small"
-                        sx={{ fontFamily:'Dosis' , color: 'white', borderColor: 'gray', padding:"6px", minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
-                        className="flex gap-1 m-auto text-white lg:w-full">
-                            <DownloadIcon fontSize="small"/>
-                            <span>Download CV</span>
-                        </Button>
-
-                        <Button variant="outlined" size="small"
-                        sx={{ fontFamily:'Dosis', color: 'white', borderColor: 'gray', padding:"6px" , minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
-                        className="flex gap-1 m-auto text-white lg:w-full">
-                            <EmailIcon fontSize="small"/>
-                            <span>Fale comigo</span>
-                        </Button>
+                    <div className="flex gap-4 mt-4 p-4">
+                        <a href="/curriculo.pdf" download>
+                            <Button variant="outlined" size="small"
+                            sx={{ fontFamily:'Dosis' , color: 'white', borderColor: 'gray', padding:"6px", minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
+                            className="flex gap-1 m-auto text-white lg:w-full">
+                                <DownloadIcon fontSize="small"/>
+                                <span>Download CV</span>
+                            </Button>
                         </a>
+
+                        <a href="https://www.linkedin.com/in/lailson-santana-dev/">
+                            <Button variant="outlined" size="small"
+                            sx={{ fontFamily:'Dosis', color: 'white', borderColor: 'gray', padding:"6px" , minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
+                            className="flex gap-1 m-auto text-white lg:w-full">
+                                <EmailIcon fontSize="small"/>
+                                <span>Fale comigo</span>
+                            </Button>
+                        </a>
+                        
+                    </div>
 
                     
                 </div>

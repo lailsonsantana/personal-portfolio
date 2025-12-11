@@ -12,15 +12,7 @@ import CasinoIcon from '@mui/icons-material/Casino';
 
 const items = [
 
-    {
-        project : "Portifólio Pessoal",
-        description : "Landing page",
-        link: "",
-        icon: <WebIcon fontSize="large" className="text-white" />,
-        finishedDate: "Em andamento",
-        image: "port.png"
 
-    },
     {
         project: "Question Hub",
         //"Uma plataforma educativa online para criação de questões, criada como trabalho de conclusão de curso (TCC)"

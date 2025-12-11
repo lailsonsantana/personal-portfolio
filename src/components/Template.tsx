@@ -3,9 +3,8 @@
 import Navbar from "./Navbar"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+
 
 interface TemplateProps{
     children: React.ReactNode
