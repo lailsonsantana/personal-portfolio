@@ -32,15 +32,15 @@ const Information: React.FC<InformationProps> = () => {
                     <ul className="space-y-3 text-lg">
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        Finalizar e apresentar meu trabalho de conclusão de curso (TCC)
+                            Pós-graduação em Desenvolvimento Web
                         </li>
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        Ingressar no mercado de trabalho
+                            Ingressar no mercado de trabalho
                         </li>
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        Iniciar o aprendizado de microservices no Spring Boot
+                            Iniciar o aprendizado de microservices no Spring Boot
                         </li>
                     </ul>
                     </ContainerInfo>
@@ -54,15 +54,15 @@ const Information: React.FC<InformationProps> = () => {
                     <ul className="space-y-3 text-lg">
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        Pós-graduação em Desenvolvimento Web
+                            Escrever um livro sobre tecnologia
                         </li>
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        Aprimorar minha capacidade de entender e resolver problemas
+                            Aprimorar minha capacidade de entender e resolver problemas
                         </li>
                         <li className="flex items-center gap-2">
                         <Check className="text-green-600" />
-                        Lançamento de uma plataforma para ensino e aprendizado da língua inglesa
+                            Lançamento de uma plataforma para ensino e aprendizado da língua inglesa
                         </li>
                     </ul>
                     </ContainerInfo>
@@ -110,7 +110,7 @@ const Information: React.FC<InformationProps> = () => {
                         </li>
                         <li className="flex items-center gap-2">
                         <Check className="text-gray-400" />
-                        {/* Outro curso em branco, você pode adicionar */}
+
                         Aguardando atualização
                         </li>
                         <li className="flex items-center gap-2">
