@@ -1,7 +1,6 @@
 import SectionTitle from "../SectionTitle";
 import CodePresentation from "../CodePresentation";
 import DescriptionCode from "../DescriptionCode";
-import FlowingMenu from "../teste/FlowingMenu";
 
 interface AboutProps{
 

@@ -1,13 +1,5 @@
 import SectionTitle from "../SectionTitle";
-import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
-import StorageIcon from '@mui/icons-material/Storage';
-import SchoolIcon from '@mui/icons-material/School';
-import BuildIcon from '@mui/icons-material/Build';
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
-import ContainerSkills from "../containers/ContainerSkills";
 import InfiniteScroll from "../teste/AutomaticRoll";
-import { Popover, Tooltip } from "@mui/material";
 import Wrappertech from "../wrapper/Wrappertech";
 
 // Implementar o detalhamento das habilidades , ou seja , o que 
