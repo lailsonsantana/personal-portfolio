@@ -9,8 +9,7 @@ import ContainerInfo from "../containers/ContainerInfo";
 interface InformationProps{
 
 }
-// Em busca de novos desafios
-// Foco no desenvolvimento contínuo
+
 const Information: React.FC<InformationProps> = () => {
     return(
         <section id="Information" className="bg-[#E6E5DE] p-4 pb-32 pt-16 text-black flex flex-col">
@@ -18,12 +17,10 @@ const Information: React.FC<InformationProps> = () => {
 
             <div className="max-w-6xl mx-auto space-y-12 mt-8 font-thin flex flex-wrap">
 
-                {/* OBJETIVOS */}
                 <div>
                 <h2 className="text-4xl font-semibold mb-6 text-center text-black">Objetivos</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 m-8">
                     
-                    {/* Curto Prazo */}
                     <ContainerInfo>
                     <h3 className="flex items-center gap-2 text-2xl font-bold mb-4 border-b-1 border-gray-700 p-2">
                         <TodayIcon className="text-[#8EA7CB]" />
@@ -45,7 +42,6 @@ const Information: React.FC<InformationProps> = () => {
                     </ul>
                     </ContainerInfo>
 
-                    {/* Médio/Longo Prazo */}
                     <ContainerInfo>
                     <h3 className="flex items-center gap-2 text-2xl font-bold mb-4 border-b-1 border-gray-700 p-2">
                         <DateRangeIcon className="text-[#8EA7CB]" />
@@ -70,12 +66,12 @@ const Information: React.FC<InformationProps> = () => {
                 </div>
                 </div>
 
-                {/* CURSOS */}
+
                 <div>
                 <h2 className="text-4xl font-semibold mb-6 text-center">Cursos</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 m-8">
 
-                    {/* Finalizados */}
+
                     <ContainerInfo>
                     <h3 className="flex items-center gap-2 text-2xl font-bold mb-4 border-b-1 border-gray-700 p-2">
                         <ChecklistRtlIcon className="text-teal-500" />
@@ -97,7 +93,7 @@ const Information: React.FC<InformationProps> = () => {
                     </ul>
                     </ContainerInfo>
 
-                    {/* Em Andamento */}
+ 
                     <ContainerInfo>
                     <h3 className="flex items-center gap-2 text-2xl font-bold mb-4 border-b-1 border-gray-700 p-2">
                         <PendingIcon className="text-[#8EA7CB]" />
