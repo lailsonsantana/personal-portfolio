@@ -5,12 +5,21 @@ import useEmblaCarousel from "embla-carousel-react"
 import {Calendar, ChevronLeft, ChevronRight,} from "lucide-react"
 import GitHubIcon from "@mui/icons-material/GitHub";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import WebIcon from '@mui/icons-material/Web';
 import QuizIcon from '@mui/icons-material/Quiz';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
 import CasinoIcon from '@mui/icons-material/Casino';
+import CoPresentIcon from '@mui/icons-material/CoPresent';
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 
 const items = [
+    {
+        project: "Portifólio",
+        //"Uma plataforma educativa online para criação de questões, criada como trabalho de conclusão de curso (TCC)"
+        description: "Portifólio profissional",
+        link: "https://github.com/lailsonsantana/personal-portfolio",
+        icon: <CoPresentIcon fontSize="large" className="text-white" />,
+        finishedDate: "18/10/2025",
+        image: "port.png"
+    },
 
 
     {
@@ -29,6 +38,14 @@ const items = [
         icon: <AccountTreeIcon fontSize="large" className="text-white" />,
         finishedDate: "01/03/2025",
         image: "flux.png"
+    },
+    {
+        project: "Clima Br",
+        description: "Um programa para cálculo de séries sintéticas de precipitação",
+        link: "https://github.com/lailsonsantana/Clima-Br",
+        icon: <ThunderstormIcon fontSize="large" className="text-white" />,
+        finishedDate: "15/09/2022",
+        image: "port.png"
     },
     {
         project : "Jogo de Apostas",
