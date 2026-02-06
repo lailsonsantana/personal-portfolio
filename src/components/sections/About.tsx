@@ -9,7 +9,7 @@ interface AboutProps{
 const full = 
     `const dev = {
         name: "Lailson",
-        age: "25",
+        age: "26",
         city: "Vitória da Conquista-BA"
         graduation: "Computer Sciente",
         skills: [
@@ -26,39 +26,23 @@ const full =
         ]
 };`
 
-const description = `Iniciei minha caminhada na área da programação um pouco antes de ingressar no curso
-                                de Ciência da Computação em 2019, desde então, tive certeza de que aquele era o caminho
-                                que eu gostaria de trilhar. Os desafios e projetos são o que me impulsionam na área
-                                de desenvolvimento de software, minha capacidade de contornar condições adversas  e meu
-                                desejo de constante aprimoramento são minhas principais qualidades.`
+const description = `Sou graduado em Ciência da Computação, com atuação direcionada ao desenvolvimento de APIs REST utilizando a linguagem Java e o framework Spring Boot . Busco desenvolver soluções focadas na utilização de boas práticas, padrões de projeto,
+ arquiteturas consolidadas e frameworks/bibliotecas com grande aceitação na comunidade.`
 
 
 const About: React.FC<AboutProps> = () => {
     return(
-        <section id="about" className="bg-[#E6E5DE] p-4 text-black flex flex-col ">
+        <section id="about" className="bg-[#E6E5DE] p-4 lg:p-8 text-black flex flex-col">
             <SectionTitle section="Sobre"/>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center">
-                
-                    {/*<h2 className="flex text-2xl font-bold mb-4 justify-center">Breve descrição</h2>*/}
                     
-                    <DescriptionCode text={description} />
+                <DescriptionCode text={description} />
 
-                
-                    <CodePresentation fullCode={full}/>
+                <CodePresentation fullCode={full}/>
                 
             </div>
 
-            
-
-            {/*<div className="container grid grid-cols-1 mt-4 place-items-center">
-                
-                <div>
-                    <h2 className="flex text-2xl font-bold justify-center mb-2">Vídeo de Apresentação</h2>
-                    <VideoPlayer />
-                </div>
-                
-            </div>*/}
         </section>
     )
 }
