@@ -26,8 +26,17 @@ const full =
         ]
 };`
 
-const description = `Sou graduado em Ciência da Computação, com atuação direcionada ao desenvolvimento de APIs REST utilizando a linguagem Java e o framework Spring Boot . Busco desenvolver soluções focadas na utilização de boas práticas, padrões de projeto,
- arquiteturas consolidadas e frameworks/bibliotecas com grande aceitação na comunidade.`
+
+const description = (
+  <p className="text-justify m-16">
+    Sou graduado em <strong className="text-blue-400">Ciência da Computação</strong>, com atuação direcionada ao desenvolvimento de APIs REST utilizando 
+    a linguagem <strong>Java</strong> e o framework <strong>Spring Boot</strong>.
+    <br/><br/>
+    Busco desenvolver soluções focadas na utilização de <strong>boas práticas</strong>, 
+    padrões de projeto, arquiteturas consolidadas e frameworks/bibliotecas com grande aceitação na comunidade.
+  </p>
+);
+
 
 
 const About: React.FC<AboutProps> = () => {

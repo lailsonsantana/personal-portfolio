@@ -2,7 +2,7 @@ import ContainerCode from "./containers/ContainerCode";
 import CloseIcon from '@mui/icons-material/Close';
 
 interface DescriptionCodeProps{
-    text: string
+    text: React.ReactNode;
 }
 
 const DescriptionCode: React.FC<DescriptionCodeProps> = ({text} : DescriptionCodeProps) => {
@@ -26,13 +26,13 @@ const DescriptionCode: React.FC<DescriptionCodeProps> = ({text} : DescriptionCod
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-2xl font-bold m-auto">
+            <h1 className="text-2xl m-auto">
               Hello World
             </h1>
 
-            <p className="text-center m-4">
+            
               {text}
-            </p>
+            
           </div>
     
           <div className="bg-[#007acc] text-white text-xs px-4 py-1 flex justify-between">

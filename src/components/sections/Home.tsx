@@ -28,7 +28,7 @@ const Home: React.FC<HomeProps> = () => {
                     <div className="flex gap-4 mt-4 p-4">
                         <a href="/curriculo.pdf" download>
                             <Button variant="outlined" size="small"
-                            sx={{ fontFamily:'Dosis' , color: 'white', borderColor: 'gray', padding:"6px", minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
+                            sx={{ fontFamily: 'var(--font-titillium), sans-serif' , color: 'white', borderColor: 'gray', padding:"6px", minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
                             className="flex gap-1 m-auto text-white lg:w-full">
                                 <DownloadIcon fontSize="small"/>
                                 <span>Download CV</span>
@@ -37,7 +37,7 @@ const Home: React.FC<HomeProps> = () => {
 
                         <a href="https://www.linkedin.com/in/lailson-santana-dev/">
                             <Button variant="outlined" size="small"
-                            sx={{ fontFamily:'Dosis', color: 'white', borderColor: 'gray', padding:"6px" , minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
+                            sx={{ fontFamily: 'var(--font-titillium), sans-serif', color: 'white', borderColor: 'gray', padding:"6px" , minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
                             className="flex gap-1 m-auto text-white lg:w-full">
                                 <EmailIcon fontSize="small"/>
                                 <span>Fale comigo</span>
