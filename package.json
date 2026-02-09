@@ -16,7 +16,6 @@
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.3.7",
     "@mui/system": "^7.3.7",
-    "@mui/x-charts": "^8.27.0",
     "@phosphor-icons/react": "^2.1.7",
     "@vercel/analytics": "^1.6.1",
     "embla-carousel-react": "^8.5.2",
@@ -25,8 +24,8 @@
     "lucide-react": "^0.486.0",
     "next": "^14.1.0",
     "portfolio": "file:",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-player": "^2.16.0"
   },
   "devDependencies": {
