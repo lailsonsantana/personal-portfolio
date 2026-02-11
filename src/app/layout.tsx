@@ -1,6 +1,3 @@
-'use client'
-
-
 import { Titillium_Web } from 'next/font/google';
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';

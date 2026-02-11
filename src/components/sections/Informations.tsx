@@ -1,5 +1,5 @@
-import SectionTitle from "../SectionTitle";
-import StudyLog from "../StudyLog";
+import SectionTitle from "../ui/SectionTitle";
+import StudyLog from "../layout/StudyLog";
 
 
 interface InformationProps{

@@ -1,6 +1,6 @@
 'use-client'
 
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../ui/SectionTitle";
 import useEmblaCarousel from "embla-carousel-react"
 import {Calendar, ChevronLeft, ChevronRight,} from "lucide-react"
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -9,6 +9,7 @@ import QuizIcon from '@mui/icons-material/Quiz';
 import CasinoIcon from '@mui/icons-material/Casino';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
+import BallotIcon from '@mui/icons-material/Ballot';
 
 const items = [
     {
@@ -40,20 +41,20 @@ const items = [
         image: "flux.png"
     },
     {
+        project : "Life Control",
+        description : "Aplicação para controle de rotina.",
+        link: "https://github.com/LailsonSantana/life-control",
+        icon: <BallotIcon fontSize="large" className="text-white"/>,
+        finishedDate: "15/01/2026",
+        image: "lifecontrol.png"
+    },
+    {
         project: "Clima Br",
         description: "Um programa para cálculo de séries sintéticas de precipitação",
         link: "https://github.com/lailsonsantana/Clima-Br",
         icon: <ThunderstormIcon fontSize="large" className="text-white" />,
         finishedDate: "15/09/2022",
         image: "port.png"
-    },
-    {
-        project : "Jogo de Apostas",
-        description : "Jogo de apostas.",
-        link: "https://github.com/LailsonSantana/Jogo_de_Apostas",
-        icon: <CasinoIcon fontSize="large" className="text-white" />,
-        finishedDate: "23/05/2021",
-        image: "front.png"
     },
     
 ]

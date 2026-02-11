@@ -1,6 +1,6 @@
-import SectionTitle from "../SectionTitle";
-import CodePresentation from "../CodePresentation";
-import DescriptionCode from "../DescriptionCode";
+import SectionTitle from "../ui/SectionTitle";
+import CodePresentation from "../layout/CodePresentation";
+import DescriptionCode from "../layout/DescriptionCode";
 
 interface AboutProps{
 

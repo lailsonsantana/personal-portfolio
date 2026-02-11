@@ -17,12 +17,12 @@ const techs = [
   { name: "Python", icon: "mdi:language-python" },
 ];
 
-export default function InfiniteScroll2() {
+export default function InfiniteScroll() {
   return (
     <div className="relative overflow-hidden bg-[#080121] py-4 border-y border-gray-700 w-screen">
       {/* Sombras laterais */}
-      <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 h-full w-16 bg-linear-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 h-full w-16 bg-linear-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
 
       {/* Faixa com as tecnologias duplicadas */}
       <div className="flex animate-marquee whitespace-nowrap min-w-max ">

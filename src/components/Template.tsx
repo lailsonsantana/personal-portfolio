@@ -1,6 +1,6 @@
 'use client'
 
-import Navbar from "./Navbar"
+import Navbar from "./layout/Navbar"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';

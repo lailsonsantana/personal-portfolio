@@ -1,4 +1,4 @@
-import ContainerCode from "./containers/ContainerCode";
+import ContainerCode from "../containers/ContainerCode";
 import CloseIcon from '@mui/icons-material/Close';
 
 interface DescriptionCodeProps{

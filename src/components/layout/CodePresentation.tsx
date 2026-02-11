@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import ContainerCode from './containers/ContainerCode';
+import ContainerCode from '../containers/ContainerCode';
 import CloseIcon from '@mui/icons-material/Close';
-import formatCode from './utils/Formatter';
+import formatCode from '../utils/Formatter';
 
 
 interface CodeProps {

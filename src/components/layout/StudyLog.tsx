@@ -1,35 +1,30 @@
 'use client'
 
-import { DataClass } from "@/resources/data.resource";
-import { useStudyLogService } from "@/resources/studylog.service";
-import { useEffect, useState } from "react";
+import { getAllStudyLogsAndCount } from "@/service/studylog.service";
+import  useSWR from "swr"
+
 
 interface StudyLogProps {
 
 }
 
 const StudyLog: React.FC<StudyLogProps> = () => {
+    
+    const {data: studylogs = [], mutate} = useSWR('logs' , getAllStudyLogsAndCount)
 
-    const useStudyLog = useStudyLogService();
-	const [data, setData] = useState<DataClass | null>(null);
-    const [hasMounted, setHasMounted] = useState(false);
+    
 
-    useEffect(() => {
-        setHasMounted(true);
-		searchLogsAndCounters();
-	}, []);
+    const tagsCount = studylogs!
+    .flatMap(log => log.tags)
+    .reduce<Record<string, number>>((acc, tag) => {
+        acc[tag] = (acc[tag] || 0) + 1;
+        return acc;
+    }, {});
 
-    if (!hasMounted) {
-        return null;
-    }
-
-
-    async function searchLogsAndCounters() {
-        const response: DataClass = await useStudyLog.getAllStudyLogsAndCount();
-		setData(response);
-        console.table(response.studyLogResponses)
-        console.table(response.counterTagsResponses)
-    }
+    const tags = Object.entries(tagsCount).map(([tag, count]) => ({
+        tag,
+        count
+    }));
 
     
     return (
@@ -37,9 +32,12 @@ const StudyLog: React.FC<StudyLogProps> = () => {
             <div className="mb-16">
             <div className="flex items-start justify-between">
                 <div>
-                <h2 className="text-3xl font-bold text-gray-900">
-                    📚 Diário de Bordo Técnico
-                </h2>
+                <span className="flex gap-4 items-center">
+                    <img className="w-6 h-6" src="info.png"/>
+                    <h2 className="text-3xl font-bold text-gray-900">
+                        Diário de Bordo Técnico
+                    </h2>
+                </span>
                 <p className="mt-4 max-w-xl text-gray-600">
                     Registro cronológico de estudos, projetos e experimentos técnicos.
                 </p>
@@ -50,11 +48,11 @@ const StudyLog: React.FC<StudyLogProps> = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Timeline principal */}
             <div className="space-y-6">
-                {data?.studyLogResponses.slice(0, 3).map((log) => (
-                <div key={log.createdAt} className="relative pl-12 group">
+                {studylogs!.slice(0, 3).map((log) => (
+                <div key={log.id} className="relative pl-12 group">
                     {/* Linha vertical e ponto */}
-                    <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[#3C360A] via-[#918848] to-transparent"></div>
-                    <div className="absolute left-[-4px] top-0">
+                    <div className="absolute left-0 top-0 bottom-0 w-px bg-linear-to-b from-[#3C360A] via-[#918848] to-transparent"></div>
+                    <div className="absolute -left-1 top-0">
                     <div className="h-3 w-3 rounded-full bg-[#2C5159] ring-4 ring-white transition-transform group-hover:scale-150" />
                     </div>
 
@@ -62,7 +60,7 @@ const StudyLog: React.FC<StudyLogProps> = () => {
                     <div className="bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-all duration-300 border border-[#2C5159]">
                     <div className="flex items-start justify-between mb-3">
                         <time className="text-sm font-medium text-gray-500">
-                        {log.createdAt}
+                        {new Date(log.createdAt).toLocaleDateString("pt-BR")}
                         </time>
                     </div>
 
@@ -92,8 +90,12 @@ const StudyLog: React.FC<StudyLogProps> = () => {
             {/* Coluna complementar */}
             <div className="space-y-8">
                 {/* Card de meta atual */}
-                <div className="bg-gradient-to-r from-[#010421] to-[#2B3276] rounded-xl p-6 text-white">
-                <h3 className="text-lg font-semibold mb-4">🎯 Meta Atual</h3>
+                <div className="bg-linear-to-r from-[#010421] to-[#2B3276] rounded-xl p-6 text-white">
+                <span className="flex items-center mb-4 gap-2">
+                    <img className="w-7 h-7" src="meta.png"/>
+                    <h3 className="text-lg font-semibold">Meta Atual</h3>
+                </span>
+                
                 <p className="text-indigo-100 text-sm mb-4">
                     Desenvolver um projeto full-stack completo com React, Spring Boot e PostgreSQL
                 </p>
@@ -107,43 +109,32 @@ const StudyLog: React.FC<StudyLogProps> = () => {
                 </div>
 
                 {/* Card de tags */}
-                <div className="bg-gradient-to-r from-[#010421] to-[#2B3276] rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="flex items-center text-lg font-semibold text-white mb-4 gap-2">
-                    <svg
-                    className="w-5 h-5 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                    </svg>
-                    <span>Tags mais frequentes</span>
-                </h3>
-
-                <div className="space-y-3">
-                    {data?.counterTagsResponses?.slice(0, 5).map((item) => (
-                        <div
-                        key={item.tag}
-                        className="flex items-center justify-between p-3 rounded-lg transition-colors"
-                        >
-                        <span className="text-white">{item.tag}</span>
-                        <span className="text-xs text-white">
-                            {item.count} ocorrência{item.count > 1 ? 's' : ''}
-                        </span>
-                        </div>
-                    ))}
-                </div>
-
+                <div className="bg-linear-to-r from-[#010421] to-[#2B3276] rounded-xl p-6 shadow-sm border border-gray-100">
+                <span className="flex items-center gap-2 mb-4">
+                    <img className="w-7 h-7" src="tend.png"/>
+                    <h3 className="flex items-center text-lg font-semibold text-white">
+                        Tags mais frequentes
+                    </h3>
+                </span>
                 
 
+                <div className="space-y-3">
+                {tags.slice(0, 5).map((item) => (
+                    <div
+                    key={item.tag}
+                    className="flex items-center justify-between p-3 rounded-lg"
+                    >
+                    <span className="text-white">{item.tag}</span>
+                    <span className="text-xs text-white">
+                        {item.count} ocorrência{item.count > 1 ? "s" : ""}
+                    </span>
+                    </div>
+                ))}
                 </div>
 
-                {/* Call to action */}
+                </div>
+
+
                 <div className="bg-[#F1F0F2] rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     Quer ver mais?

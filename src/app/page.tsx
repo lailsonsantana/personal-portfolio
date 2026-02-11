@@ -6,14 +6,13 @@ import Teste from "@/components/sections/Home";
 import Template from "@/components/Template";
 import Skills from "@/components/sections/Skills";
 import Information from "@/components/sections/Informations";
-import { delius } from "@/components/theme"
 import ScrollTop from "@/components/ScrollTop";
 
 
 export default function Home() {
   return (
     
-      <main>
+    <main>
         <Template>
             <ScrollTop />
             <Teste />
@@ -22,7 +21,6 @@ export default function Home() {
             <Skills />
             <Information />
         </Template>
-      </main>
-    
+    </main>
   );
 }

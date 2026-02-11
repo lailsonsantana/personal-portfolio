@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ChevronUp } from "lucide-react";
 import { ArrowUpToLine } from "lucide-react";
 
 
