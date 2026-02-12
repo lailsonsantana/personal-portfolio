@@ -13,17 +13,9 @@ export const getAllStudyLogsAndCount = async () => {
     return response;
 }
 
-export const createStudyLog = async (
-  title: string,
-  description: string,
-  tags: string[]
-) => {
+export const createStudyLog = async (title: string, description: string, tags: string[] ) => {
   return prisma.studyLog.create({
-    data: {
-      title,
-      description,
-      tags,
-    },
+    data: { title, description, tags, },
   });
 };
 

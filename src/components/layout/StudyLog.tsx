@@ -1,5 +1,6 @@
 'use client'
 
+import { StudyLogClass } from "@/service/studylog.resource";
 import { getAllStudyLogsAndCount } from "@/service/studylog.service";
 import  useSWR from "swr"
 
@@ -14,9 +15,8 @@ const StudyLog: React.FC<StudyLogProps> = () => {
 
     
 
-    const tagsCount = studylogs!
-    .flatMap(log => log.tags)
-    .reduce<Record<string, number>>((acc: any, tag: any) => {
+    const tagsCount = (studylogs!.flatMap(log => log.tags) as string[])
+    .reduce<Record<string, number>>((acc, tag) => {
         acc[tag] = (acc[tag] || 0) + 1;
         return acc;
     }, {});
