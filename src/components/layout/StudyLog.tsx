@@ -16,7 +16,7 @@ const StudyLog: React.FC<StudyLogProps> = () => {
 
     const tagsCount = studylogs!
     .flatMap(log => log.tags)
-    .reduce<Record<string, number>>((acc, tag) => {
+    .reduce<Record<string, number>>((acc: any, tag: any) => {
         acc[tag] = (acc[tag] || 0) + 1;
         return acc;
     }, {});
