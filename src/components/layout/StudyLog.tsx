@@ -11,11 +11,12 @@ interface StudyLogProps {
 
 const StudyLog: React.FC<StudyLogProps> = () => {
     
-    const {data: studylogs = [], mutate} = useSWR('logs' , getAllStudyLogsAndCount)
+    const {data: studylogs = []} = useSWR<StudyLogClass[]>('logs' , getAllStudyLogsAndCount)
 
     
 
-    const tagsCount = (studylogs!.flatMap(log => log.tags) as string[])
+    const tagsCount = studylogs
+    .flatMap(log => log.tags) 
     .reduce<Record<string, number>>((acc, tag) => {
         acc[tag] = (acc[tag] || 0) + 1;
         return acc;

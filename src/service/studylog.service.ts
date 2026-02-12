@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 import { StudyLogClass } from "./studylog.resource";
 
 
-export const getAllStudyLogsAndCount = async () => {
+export const getAllStudyLogsAndCount = async (): Promise<StudyLogClass[]> => {
     const response = await prisma.studyLog.findMany({
         orderBy: {
             createdAt: "desc"

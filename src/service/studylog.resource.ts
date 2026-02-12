@@ -1,10 +1,12 @@
 export class StudyLogClass{
-    createdAt: string;
+    id: number
+    createdAt: Date;
     title: string;
     description: string;
     tags: string[];
 
-    constructor(date: string, title: string, description: string, tags: string[]){
+    constructor(id: number, date: Date, title: string, description: string, tags: string[]){
+        this.id = id
         this.createdAt = date;
         this.title = title;
         this.description = description;
