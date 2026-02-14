@@ -41,7 +41,7 @@ const description = (
 
 const About: React.FC<AboutProps> = () => {
     return(
-        <section id="about" className="bg-[#E6E5DE] p-4 lg:p-8 text-black flex flex-col">
+        <section id="about" className="bg-[#E6E5DE] lg:p-8 text-black flex flex-col w-full">
             <SectionTitle section="Sobre"/>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center">

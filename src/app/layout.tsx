@@ -16,12 +16,14 @@ export default function RootLayout({
 }>) {
   
   return (
-    <html lang="en">
-      <body
-        className={titillium.variable} style={{ fontFamily: 'var(--font-titillium), sans-serif' }}>
-        {children}
-        <Analytics/>
-      </body>
-    </html>
-  );
+  <html lang="pt-BR">
+    <body
+      className={`${titillium.variable} overflow-x-hidden`}
+      style={{ fontFamily: 'var(--font-titillium), sans-serif' }}
+    >
+      {children}
+      <Analytics />
+    </body>
+  </html>
+);
 }
