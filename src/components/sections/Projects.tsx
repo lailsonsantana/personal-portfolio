@@ -10,6 +10,7 @@ import CasinoIcon from '@mui/icons-material/Casino';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import BallotIcon from '@mui/icons-material/Ballot';
+import StudyLog from "../layout/StudyLog";
 
 const items = [
     {

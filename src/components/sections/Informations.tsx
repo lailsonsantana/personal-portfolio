@@ -9,15 +9,21 @@ interface InformationProps{
 const Information: React.FC<InformationProps> = () => {
 
     return(
-        <section id="Information" className="bg-[#F1F0F2]">
- 
-            <SectionTitle section="Mais Informações" />
+        <section id="Information" className="bg-[#F1F0F2] flex">
+            
+            <div className="w-full">
+                <SectionTitle section="Mais Informações" />
 
-            <div className="mt-8">  
-                <StudyLog />
+                <div className="mt-8">  
+                    <StudyLog />
+                </div>
             </div>
 
+            
+
         </section>
+
+        
     )
 }
 
