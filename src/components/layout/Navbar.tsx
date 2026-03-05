@@ -60,17 +60,7 @@ export default function Navbar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="absolute" elevation={10} sx={{ backgroundColor: '#010F22'}}>
                 <StyledMobileToolbar>
-                    <Box
-                        component="img"
-                        src="/logo5.png"
-                        alt="LS Logo"
-                        sx={{
-                            height: 36,
-                            width: "auto",
-                            cursor: "pointer"
-                        }}
-                        onClick={() => handleSmoothScroll("home")}
-                        />
+                    
                     <IconButton
                         size="large"
                         aria-label="account of current user"
@@ -105,7 +95,7 @@ export default function Navbar() {
                         <MenuItem onClick={() => handleSmoothScroll("skills")}>
                             <StyledNavLink>Habilidades</StyledNavLink>
                         </MenuItem>
-                        <MenuItem onClick={() => handleSmoothScroll("skills")}>
+                        <MenuItem onClick={() => handleSmoothScroll("informations")}>
                             <StyledNavLink>Mais Informações</StyledNavLink>
                         </MenuItem>
                         <MenuItem onClick={() => handleSmoothScroll("blog")}>
@@ -115,18 +105,7 @@ export default function Navbar() {
                     </Menu>
                 </StyledMobileToolbar>
                 <StyledDesktopToolbar variant="regular">
-                    <Box
-                        component="img"
-                        src="/logo5.png"
-                        alt="LS Logo"
-                        sx={{
-                        height: 150,
-                        width: "auto",
-                        mr: "auto",
-                        cursor: "pointer"
-                        }}
-                        onClick={() => handleSmoothScroll("home")}
-                    />
+                    
                 <MenuItem onClick={() => handleSmoothScroll("home")}>
                         <StyledNavLink>Home</StyledNavLink>
                     </MenuItem>
@@ -139,12 +118,10 @@ export default function Navbar() {
                     <MenuItem onClick={() => handleSmoothScroll("skills")}>
                         <StyledNavLink>Habilidades</StyledNavLink>
                     </MenuItem>
-                    <MenuItem onClick={() => handleSmoothScroll("skills")}>
+                    <MenuItem onClick={() => handleSmoothScroll("informations")}>
                         <StyledNavLink>Mais Informações</StyledNavLink>
                     </MenuItem>
-                    <MenuItem onClick={() => handleSmoothScroll("skills")}>
-                        <StyledNavLink>Blog</StyledNavLink>
-                    </MenuItem>
+
                     
                 </StyledDesktopToolbar>
             </AppBar>
