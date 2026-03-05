@@ -15,10 +15,8 @@ const Template: React.FC<TemplateProps> = ({children}) => {
         <>
             <Header />
 
-            
                 {children}
             
-
             <Footer />
         </>
     )
@@ -26,9 +24,7 @@ const Template: React.FC<TemplateProps> = ({children}) => {
 
 const Header: React.FC = () => {
     return(
-        <div >
-            <Navbar />
-        </div>
+        <Navbar />
     )
 }
 

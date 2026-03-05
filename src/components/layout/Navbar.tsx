@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { styled } from '@mui/material';
 
+
 export const StyledNavLink = styled("a")(() => ({
     textDecoration: "none",
     color: "inherit",
@@ -16,13 +17,14 @@ export const StyledNavLink = styled("a")(() => ({
 }));
 
 export const StyledMobileToolbar = styled(Toolbar)(({ theme }) => ({
-    [theme.breakpoints.up('xs')]: {
-        display: "flex",
-        justifyContent: "end"
-    },
-    [theme.breakpoints.up('md')]: {
-        display: "none",
-    },
+  [theme.breakpoints.up('xs')]: {
+    display: "flex",
+    justifyContent: "space-between", // 🔥 importante
+    alignItems: "center",
+  },
+  [theme.breakpoints.up('md')]: {
+    display: "none",
+  },
 }));
 
 export const StyledDesktopToolbar = styled(Toolbar)(({ theme }) => ({
@@ -58,6 +60,17 @@ export default function Navbar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="absolute" elevation={10} sx={{ backgroundColor: '#010F22'}}>
                 <StyledMobileToolbar>
+                    <Box
+                        component="img"
+                        src="/logo5.png"
+                        alt="LS Logo"
+                        sx={{
+                            height: 36,
+                            width: "auto",
+                            cursor: "pointer"
+                        }}
+                        onClick={() => handleSmoothScroll("home")}
+                        />
                     <IconButton
                         size="large"
                         aria-label="account of current user"
@@ -79,6 +92,7 @@ export default function Navbar() {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
+                        
                         <MenuItem onClick={() => handleSmoothScroll("home")}>
                             <StyledNavLink>Home</StyledNavLink>
                         </MenuItem>
@@ -94,10 +108,25 @@ export default function Navbar() {
                         <MenuItem onClick={() => handleSmoothScroll("skills")}>
                             <StyledNavLink>Mais Informações</StyledNavLink>
                         </MenuItem>
+                        <MenuItem onClick={() => handleSmoothScroll("blog")}>
+                            <StyledNavLink>Blog</StyledNavLink>
+                        </MenuItem>
                         
                     </Menu>
                 </StyledMobileToolbar>
                 <StyledDesktopToolbar variant="regular">
+                    <Box
+                        component="img"
+                        src="/logo5.png"
+                        alt="LS Logo"
+                        sx={{
+                        height: 150,
+                        width: "auto",
+                        mr: "auto",
+                        cursor: "pointer"
+                        }}
+                        onClick={() => handleSmoothScroll("home")}
+                    />
                 <MenuItem onClick={() => handleSmoothScroll("home")}>
                         <StyledNavLink>Home</StyledNavLink>
                     </MenuItem>
@@ -111,8 +140,11 @@ export default function Navbar() {
                         <StyledNavLink>Habilidades</StyledNavLink>
                     </MenuItem>
                     <MenuItem onClick={() => handleSmoothScroll("skills")}>
-                            <StyledNavLink>Mais Informações</StyledNavLink>
-                        </MenuItem>
+                        <StyledNavLink>Mais Informações</StyledNavLink>
+                    </MenuItem>
+                    <MenuItem onClick={() => handleSmoothScroll("skills")}>
+                        <StyledNavLink>Blog</StyledNavLink>
+                    </MenuItem>
                     
                 </StyledDesktopToolbar>
             </AppBar>

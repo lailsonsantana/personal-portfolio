@@ -17,6 +17,7 @@ export async function POST(request: Request) {
       tags
     );
 
+
     return Response.json(studyLog, { status: 201 });
   } catch (error) {
     console.error(error);

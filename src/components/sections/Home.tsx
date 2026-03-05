@@ -52,7 +52,7 @@ const Home: React.FC<HomeProps> = () => {
 
             <div className="flex flex-col p-8 items-end">
                 <div className="flex flex-col">
-                    <h1 className="text-white text-center text-sm lg:text-lg font-thin">Aprendendo a construir e transformar códigos em soluções reais, </h1>
+                    <h1 className="text-white text-center text-sm lg:text-lg font-thin">Construindo e transformando códigos em soluções reais, </h1>
                     <h1 className="text-white text-center text-sm lg:text-lg font-thin">em um mundo digital, dinâmico e conectado.  </h1>
                 </div>
             </div>

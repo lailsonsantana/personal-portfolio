@@ -1,0 +1,73 @@
+[
+  {
+    "id": 16,
+    "createdAt": "2026-03-05T14:10:42.346Z",
+    "title": "Teste",
+    "description": "Testando JSON local",
+    "tags": [
+      "KKKKKKKK"
+    ]
+  },
+  {
+    "id": 7,
+    "createdAt": "2026-03-05T12:34:13.938Z",
+    "title": "Introdução ao MongoDB",
+    "description": "Entendi como funciona bancos de dados orientados a documentos e suas principais diferenças com relação a bancos relacionais, conheci o MongoDB e tive uma visão geral sobre as ferramentas do MongoDB Atlas",
+    "tags": [
+      "Banco de Dados",
+      "MongoDB",
+      "MongoDB Atlas",
+      "NoSQL"
+    ]
+  },
+  {
+    "id": 6,
+    "createdAt": "2026-03-04T12:24:40.876Z",
+    "title": "Abstrações na modelagem e em Java",
+    "description": "Investiguei de forma mais profunda o conceito de abstração para distinguir a abstração usada na modelagem de dados com relação a usada na linguagem Java, e entender os diferentes tipos de abstração",
+    "tags": [
+      "Java",
+      "POO",
+      "Abstração",
+      "Modelagem de Dados"
+    ]
+  },
+  {
+    "id": 3,
+    "createdAt": "2026-02-13T13:56:26.397Z",
+    "title": "Tratamento de exceções",
+    "description": "Modifiquei o tratamento global de exceções de uma API, para ficar em conformidade com a RFC 9457 (Problem Details for HTTP APIs)",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "REST API",
+      "Exceptions",
+      "RFC 9457"
+    ]
+  },
+  {
+    "id": 2,
+    "createdAt": "2026-02-10T15:10:46.547Z",
+    "title": "Persistência do diário de bordo",
+    "description": "Implementei, com suporte do ORM Prisma, endpoints para salvar e recuperar logs de estudo em um banco de dados postgres hospedado no servidor Neon",
+    "tags": [
+      "Prisma",
+      "Neon",
+      "Git/Github",
+      "Typescript",
+      "Postgres"
+    ]
+  },
+  {
+    "id": 1,
+    "createdAt": "2026-02-10T14:57:51.932Z",
+    "title": "Atualização de portfólio",
+    "description": "Modifiquei a seção de Mais Informações para incluir um diário de bordo de estudos e projetos",
+    "tags": [
+      "React",
+      "Tailwind",
+      "Git/Github",
+      "Typescript"
+    ]
+  }
+]
