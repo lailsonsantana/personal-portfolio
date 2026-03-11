@@ -1,6 +1,6 @@
-import SectionTitle from "../ui/SectionTitle";
 import StudyLog from "../layout/StudyLog";
-import StudyLog1 from "../layout/StudyLog1";
+import SectionTitle from "../ui/SectionTitle";
+
 
 
 interface InformationProps{
@@ -15,8 +15,8 @@ const Information: React.FC<InformationProps> = () => {
             <div className="w-full">
                 <SectionTitle section="Mais Informações" />
 
-                <div className="mt-8 h-2/5">  
-                    <StudyLog1 />
+                <div className="mt-4">  
+                    <StudyLog />
                 </div>
             </div>
 

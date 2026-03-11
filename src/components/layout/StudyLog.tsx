@@ -4,22 +4,21 @@ import { StudyLogClass } from "@/service/studylog.resource";
 import useSWR from "swr"
 
 import { useState } from "react";
-import TagsCard from "./TagsBar";
-import Button from "@mui/material/Button";
+
 
 import LogCard from "./LogCard";
+import TagsBar from "./TagsBar";
 
 
-interface StudyLogProps {
+interface StudyLog1Props {
 
 }
-
-const StudyLog: React.FC<StudyLogProps> = () => {
+const StudyLog1: React.FC<StudyLog1Props> = () => {
 
     const fetcher = (url: string) => fetch(url).then(res => res.json());
     //const { data: studylogs = [] } = useSWR<StudyLogClass[]>('logs', getAllStudyLogsAndCount)
     const { data: studylogs = [] } = useSWR<StudyLogClass[]>("/data/studylogs.json", fetcher);
-    const [visibleCount, setVisibleCount] = useState(3);
+    const [visibleCount, setVisibleCount] = useState(4);
 
     const tagsCount = studylogs
         .flatMap(log => log.tags)
@@ -40,64 +39,56 @@ const StudyLog: React.FC<StudyLogProps> = () => {
 
     const handleShowMore = () => {
 
-        setVisibleCount((prev) => prev + 3);
+        setVisibleCount((prev) => prev + 2);
     };
 
 
     return (
-        <>
-            <section className="flex flex-col max-w-6xl pb-8 md:pb-16 mx-auto">
+        <div className="flex flex-col min-h-screen bg-[#F1F0F2] p-6 mb-12">
 
-                <div className="flex mb-8 rounded-2xl p-4">
-                    <div className="flex items-start justify-between">
-                        <div className="ml-2">
-                            <span className="flex gap-4 items-center ">
-                                {/*<img className="w-6 h-6" src="info.png"/>*/}
-                                <h2 className="text-3xl font-mono text-gray-90">
-                                    Diário de Bordo Técnico
-                                </h2>
-                            </span>
-                            <p className="mt-4 max-w-xl text-gray-600">
-                                Registro cronológico de estudos, projetos e experimentos técnicos.
-                            </p>
-                        </div>
+            <div className="mx-auto mb-8 rounded-2xl p-4">
+                <div className="flex items-start justify-center">
+                    <div className="flex flex-col items-center justify-center ml-2">
+                        <span className="flex gap-4 items-center ">
+                            <h2 className="text-3xl font-mono text-gray-90">
+                                Diário de Bordo Técnico
+                            </h2>
+                        </span>
+                        <p className="mt-4 max-w-xl text-gray-600">
+                            Registro cronológico de estudos, projetos e experimentos técnicos.
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <div className="mt-4 flex justify-center w-full mb-2">
-                    <TagsCard tags={tags} />
-                </div>
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
-                <div className="flex flex-col gap-12 h-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:col-span-2">
+
+                <TagsBar tags = {tags}/>
+
+                <main className="md:col-span-3 space-y-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {showLogs.map((log) => (
-                            <div key={log.id} className="relative group">
-
-                                <LogCard date={log.createdAt} title={log.title} description={log.description} tags={log.tags} />
-
-                            </div>
+                            <LogCard id={log.id} date={log.createdAt} title={log.title} description={log.description} tags={log.tags} />
                         ))}
                     </div>
-                </div>
 
 
-                <div className="flex justify-center items-center rounded-full p-6">
+                    <div className="flex justify-center pt-4">
+                        {visibleCount < studylogs!.length && (
+                        <button
+                            className="px-8 py-3 bg-[#F1F0F2] border border-[#010D26] text-gray-600 font-semibold rounded-sm hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all shadow-sm active:scale-95"
+                            onClick={() => handleShowMore()}
+                        >
+                            Carregar mais 
+                        </button>
+                        )}
+                    </div>
+                </main>
 
-                    {visibleCount < studylogs!.length && (
-                        <Button variant="contained" size="small" onClick={handleShowMore}
-                            sx={{ backgroundColor: '#010F22', fontFamily: 'var(--font-titillium), sans-serif', color: 'white', borderColor: 'gray', padding: "6px", minWidth: '150px', '&:hover': { borderColor: 'gray.300' } }}
-                            className="flex gap-1 m-auto lg:w-1/12">
-
-                            <span>VER MAIS</span>
-                        </Button>
-
-                    )}
-                </div>
-
-        
-            </section>
-        </>
+            </div>
+        </div>
     );
-}
+};
 
-export default StudyLog;
+export default StudyLog1;
