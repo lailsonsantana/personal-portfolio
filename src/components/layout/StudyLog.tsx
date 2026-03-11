@@ -1,12 +1,13 @@
 'use client'
 
 import { StudyLogClass } from "@/service/studylog.resource";
-import { getAllStudyLogsAndCount } from "@/service/studylog.service";
 import useSWR from "swr"
-import LogCard from "./LogCard";
+
 import { useState } from "react";
-import TagsCard from "./TagsCard";
+import TagsCard from "./TagsBar";
 import Button from "@mui/material/Button";
+
+import LogCard from "./LogCard";
 
 
 interface StudyLogProps {
@@ -63,6 +64,10 @@ const StudyLog: React.FC<StudyLogProps> = () => {
                     </div>
                 </div>
 
+                <div className="mt-4 flex justify-center w-full mb-2">
+                    <TagsCard tags={tags} />
+                </div>
+
                 <div className="flex flex-col gap-12 h-full">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:col-span-2">
                         {showLogs.map((log) => (
@@ -89,11 +94,8 @@ const StudyLog: React.FC<StudyLogProps> = () => {
                     )}
                 </div>
 
+        
             </section>
-
-            <div className="mt-16 flex justify-center gap-32 w-full mb-32">
-                <TagsCard tags={tags} />
-            </div>
         </>
     );
 }
