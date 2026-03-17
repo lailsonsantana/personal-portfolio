@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import LogCard from "./LogCard";
 import TagsBar from "./TagsBar";
+import { getAllStudyLogsAndCount } from "@/service/studylog.service";
 
 
 interface StudyLog1Props {
@@ -16,8 +17,16 @@ interface StudyLog1Props {
 const StudyLog1: React.FC<StudyLog1Props> = () => {
 
     const fetcher = (url: string) => fetch(url).then(res => res.json());
-    //const { data: studylogs = [] } = useSWR<StudyLogClass[]>('logs', getAllStudyLogsAndCount)
-    const { data: studylogs = [] } = useSWR<StudyLogClass[]>("/data/studylogs.json", fetcher);
+    const { data: studylogs = [] } = useSWR(
+    'logs',
+    getAllStudyLogsAndCount,
+    {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateIfStale: false,
+    }
+    );
+    
     const [visibleCount, setVisibleCount] = useState(4);
 
     const tagsCount = studylogs

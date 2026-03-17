@@ -17,42 +17,16 @@ export const getAllStudyLogsAndCount = async (): Promise<StudyLogClass[]> => {
   return response;
 }
 
-/*export const createStudyLog = async (title: string, description: string, tags: string[]) => {
+export const createStudyLog = async (title: string, description: string, tags: string[]) => {
   return prisma.studyLog.create({
     data: { title, description, tags, },
   });
-};*/
-
-export const createStudyLog = async (title: string, description: string, tags: string[]) => {
-
-  const log = await prisma.studyLog.create({
-    data: { title, description, tags }
-  });
-
-
-  await rebuildStudyLogsCache();
-  return log;
 };
 
 
-export const rebuildStudyLogsCache = async () => {
 
-  const logs = await prisma.studyLog.findMany({
-    orderBy: { createdAt: "desc" }
-  });
 
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "data",
-    "studylogs.json"
-  );
 
-  await fs.writeFile(
-    filePath,
-    JSON.stringify(logs, null, 2)
-  );
-};
 
 
 
